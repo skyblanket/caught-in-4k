@@ -1,0 +1,60 @@
+{
+  "name": "caught-in-4k",
+  "version": "0.1.0",
+  "description": "Your agent said done. It never watched it run. caught-in-4k turns UI recordings into frames an agent can see: what changed, what flickered, what never moved. CLI, MCP server and agent skill.",
+  "keywords": [
+    "ui-testing",
+    "visual-testing",
+    "flicker",
+    "agent-skill",
+    "agent",
+    "ai-agent",
+    "mcp",
+    "mcp-server",
+    "claude-code",
+    "codex",
+    "skill",
+    "video",
+    "screen-recording",
+    "vision",
+    "keyframes",
+    "ffmpeg",
+    "whisper"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "caught-in-4k": "bin/caught-in-4k.mjs"
+  },
+  "exports": {
+    ".": "./src/engine.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "SKILL.md",
+    "README.md",
+    "docs/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "demo": "node test/make-demo.mjs",
+    "test": "node test/make-demo.mjs && node test/mcp-smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "sharp": "^0.34.0",
+    "zod": "^4.6.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyblanket/caught-in-4k.git"
+  },
+  "homepage": "https://github.com/skyblanket/caught-in-4k#readme",
+  "bugs": {
+    "url": "https://github.com/skyblanket/caught-in-4k/issues"
+  }
+}

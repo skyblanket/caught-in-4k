@@ -1,0 +1,6 @@
+node_modules/
+.caught-in-4k/
+.frameread/
+*.tgz
+test/*.mp4
+.DS_Store
