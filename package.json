@@ -1,6 +1,6 @@
 {
   "name": "caught-in-4k",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Your agent said done. It never watched it run. caught-in-4k turns UI recordings into frames an agent can see: what changed, what flickered, what never moved. CLI, MCP server and agent skill.",
   "keywords": [
     "ui-testing",

@@ -7,23 +7,24 @@ frozen animations and layout jumps ship with a confident "looks good!".
 caught-in-4k turns a recording into something an agent *can* see, so it catches
 its own UI bugs before you do.
 
-![A 21-second bug recording as one sheet: the agent clicks ✕ on "Buy milk" and "Call mom" disappears](docs/demo-sheet.png)
+![A 21-second bug recording as one sheet: the user clicks ✕ on "Buy milk" and "Call mom" disappears](docs/demo-sheet.png)
 
 *21 seconds of a bug repro, as one image. Red boxes mark what changed. At #7 the
 user deletes "Buy milk", but "Call mom" disappears instead.*
 
-## True story
-
-An agent built a looping bonsai animation and called it done. It wasn't watching:
-
 ```
-$ npx caught-in-4k bonsai2.mp4
-1 keyframes, 1 sheet(s)        ← the whole 4.8s loop never changed
+$ npx caught-in-4k demo-bug.mp4
+8 keyframes, 1 sheet(s) in 1.0s
+read this first: .caught-in-4k/demo-bug/index.md
 ```
 
-The "animation" was a still image (0.5% of pixels moving). The agent rebuilt it,
-ran caught-in-4k again, and got 3 keyframes with 15% motion in the tree. That's
-the loop: **record → get caught → fix → get a clean run.**
+## How an agent uses it
+
+1. Record the UI: a bug repro, a Loom, or the agent's own change running.
+2. The agent calls `watch_video` and gets the sheets plus a timeline of what
+   changed, where, and what was said.
+3. It zooms into anything suspicious with `zoom_video`, fixes the code, and
+   watches a fresh recording to confirm the fix.
 
 ## What it does
 
